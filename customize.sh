@@ -19,6 +19,8 @@ sed -i 's/192.168.1.1/192.168.10.12/g' openwrt/package/base-files/files/bin/conf
           # 示例配置，下面是 diff.config 文件中的内容
           CONFIG_PACKAGE_luci-app-openclash=y
           CONFIG_PACKAGE_luci-app-passwall=y
+          CONFIG_PACKAGE_openssh-sftp-client=y
+          CONFIG_PACKAGE_openssh-sftp-server=y
           #
           # ========================固件定制部分结束========================
           #
