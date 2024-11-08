@@ -21,6 +21,7 @@ env:
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: true
+  FEEDS_CONF: feeds.conf.default
   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
   PASSWORD: ${{ secrets.PASSWORD }}
   REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
@@ -59,7 +60,6 @@ jobs:
     - name: Get current date
       id: date
       run: |
-        FEEDS_CONF: feeds.conf.default
         echo "date=$(date +'%Y.%m.%d-%H%M')" >> $GITHUB_ENV
         echo "date2=$(date +'%m/%d %Y')" >> $GITHUB_ENV
         echo "date3=$(date +'%m.%d')" >> $GITHUB_ENV
