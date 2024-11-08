@@ -86,9 +86,10 @@ jobs:
         ln -sf /mnt/openwrt/staging_dir openwrt/staging_dir
 
     - name: Update feeds
-      working-directory: ./openwrt
-      run: |
-        ./scripts/feeds update -a
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: Install feeds
+      run: cd openwrt && ./scripts/feeds install -a
 
     - name: Defconfig ${{matrix.target}}
       env:
